@@ -1,36 +1,36 @@
-// (
-//     function () {
-//         'use strict';
+(
+    function () {
+        'use strict';
      
-//         angular
-//             .module('app', ['ngRoute', 'ngCookies'])
-//             .config(config)
-//             .run(run);
+        angular
+            .module('app', ['ngRoute', 'ngCookies'])
+            .config(config)
+            .run(run);
      
-//         config.$inject = ['$routeProvider', '$locationProvider'];
-//         function config($routeProvider, $locationProvider) {
-//             $routeProvider
-//             .when('/', {
-//                     controller: 'LoginController',
-//                     templateUrl: 'login.html',
-//                     controllerAs: 'vm'
-//                 })
+        config.$inject = ['$routeProvider', '$locationProvider'];
+        function config($routeProvider, $locationProvider) {
+            $routeProvider
+            .when('/', {
+                    controller: 'LoginController',
+                    templateUrl: 'login.html',
+                    controllerAs: 'vm'
+                })
      
-//                 .when('/home', {
-//                     controller: 'HomeController',
-//                     templateUrl: 'home.html',
-//                     controllerAs: 'vm',
-//                 })            
-//                 .when('/register', {
-//                     controller: 'RegisterController',
-//                     templateUrl: 'register.html',
-//                     controllerAs: 'vm'
-//                 })
-//                 .otherwise({ redirectTo: '/login' });
-//         }    
-//         run.$inject = ['$rootScope'];
+                .when('/home', {
+                    controller: 'HomeController',
+                    templateUrl: 'home.html',
+                    controllerAs: 'vm',
+                })            
+                .when('/register', {
+                    controller: 'RegisterController',
+                    templateUrl: 'register.html',
+                    controllerAs: 'vm'
+                })
+                .otherwise({ redirectTo: '/login' });
+        }    
+        run.$inject = ['$rootScope'];
         
-//         function run(){
-//           console.clear();
-//         }
-//     })();
+        function run(){
+          console.clear();
+        }
+    })();
