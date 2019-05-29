@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
-const PORT = 5000;
+const PORT = 6000;
 const bodyparser = require('body-parser')
 const mysql = require('mysql');
 var expressValidator = require('express-validator');
@@ -48,6 +48,7 @@ app.post('/getMealsByPrice',(req,res) =>{
     order by m.name, r.name, mt.size, price`;
  
  connection.query(serchItem,(err,result)=>{
+   
     if(err) throw err;
     console.log(result);
     res.send(result)
@@ -172,15 +173,15 @@ app.get("/getoneUser",(req,res)=>{
 
 // The connection made
 connection.connect((err)=>{
-  if(err){
-    console.log("There is a error :",err);
-  }
+  // if(err){
+  //   console.log("There is a error :",err);
+  // }
   console.log("The Conection made Successfully");
 });
 
 
 // THE SERVER
-app.use(express.static('public'))
+app.use(express.static('AngularStarterNew'));
 
 
 
@@ -245,7 +246,7 @@ app.post("/login",function(req,res){
 
 
 
-app.get('/',(req,res,next) => res.json({Start:"The First Get"}) );
+// app.get('/',(req,res,next) => res.json({Start:"The First Get"}) );
   
 module.exports = router;
 app.listen(PORT, () => console.log("The Server is working on "+PORT));
