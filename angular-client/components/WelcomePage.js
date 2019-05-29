@@ -1,4 +1,4 @@
-angular.module('MyApp')
+angular.module('MyApp', ['ngMaterial'])
 
 .component('WelcomePage1', {
 
@@ -8,10 +8,9 @@ angular.module('MyApp')
   //https://www.freepik.com/free-photo/colorful-healthy-unhealthy-food-white-textured-background_2955602.htm
 
   bindings: {
-    WelcomePageKeyBinded: '>'
+    WelcomePageKeyBinded: '<'
   },
     templateUrl: '/templates/WelcomePage.html',
-    controller:'homepage'
   
 
 })
