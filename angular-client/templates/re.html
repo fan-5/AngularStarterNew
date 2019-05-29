@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML Starter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" class="container" style="width:550px">
+        <div style="text-align:center;color:blue">
+            <h3><b> Restaurant Registraion </b></h3>
+        </div>
+        <div ng-controller="ContactController">
+            <div align="right">
+                <a href="#" ng-click="searchUser()"></a>
+            </div>
+            <form role="form" class="well" ng-hide="ifSearchUser">
+                <div class="form-group">
+                    <label for="name"> Name: </label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter Your Name "
+                        ng-model="newcontact.name">
+                </div>
+                <div class="form-group">
+                    <label for="email"> Email: </label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter Your Email "
+                        ng-model="newcontact.email">
+                </div>
+                <div class="form-group">
+                    <label for="password"> Password: </label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter Password "
+                        ng-model="newcontact.password">
+                </div>
+                <div class="form-group">
+                    <label for="phone"> Phone: </label>
+                    <input type="text" id="phone" class="form-control" placeholder="Phone Number"
+                        ng-model="newcontact.phone">
+                </div>
+                <div class="form-group">
+                    <label for="resturant">Restaurant</label>
+                    <input type="text" id="restur" class="form-control" placeholder="Restaurant Name"
+                        ng-model="newcontact.password">
+                </div>
+                <div class="form-group">
+                    <label for="password"> Restaurant Information </label>
+                    <input type="text" id="inf" class="form-control" placeholder="Description"
+                        ng-model="newcontact.password">
+                </div>
+                <br>
+                <input type="hidden" ng-model="newcontact.id">
+                <input type="button" class="btn btn-primary" ng-click="saveContact()" class="btn btn-primary"
+                    value="Submit">
+            </form>
+
+      
+        </div>
+    </div>
+</body>
+
+</html>
