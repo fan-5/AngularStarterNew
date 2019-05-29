@@ -4,7 +4,7 @@ app.controller('SearchController' , function($scope) {
 
     $http({
         method:'post',
-        url:'/login',
+        url:'/Food',
         data:JSON.stringify({
             username:$scope.username,
             password:$scope.password
@@ -17,6 +17,7 @@ app.controller('SearchController' , function($scope) {
     }).catch(function(){
         console.log('big error')
     })
+    //ASDSADSADSADASDASD
 }
 
 
