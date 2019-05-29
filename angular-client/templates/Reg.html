@@ -1,58 +1,50 @@
-<body ng-controller="RegisterCtrl" ng-app="myApp">
-  <div class="container">
-    <div id="signup">
-      <div class="signup-screen">
-        <div class="space-bot text-center">
-          <h1>Register Page</h1>
-          <div class="divider"></div>
-        </div>
-        <form class="form-register" method="post" name="register" novalidate>
-          <div class="input-field col s6">
-            <input id="name" type="text" class="validate" required>
-            <label for="name">Name</label>
-          </div>
-          <div class="email">
-            <input id="email" type="email" name="email" ng-model="email" class="validate" required>
-            <label for="email">Email</label>
-          </div>
-          <p class="alert " ng-show="form-register.email.$error.email">Your email is invalid.</p>
-          <div class="input-field col s6">
-            <input id="password" type="password" name="password" ng-model="password" ng-minlength='6' class="validate"
-              required>
-            <label for="password">Password</label>
-          </div>
-          <div class="Location">
-            <input id="loc" type="text" name="Location" ng-model="Location" ng-minlength='6' class="validate"
-              required>
-            <label for="loc">Location</label>
-          </div>
-          <div class="Location">
-            <input id="number" type="text" name="phone" ng-model="phone" ng-minlength='6' class="validate"
-              required>
-            <label for="number">Phone Number</label>
-          </div>
-          <div class="rest">
-            <input id="loc" type="text" name="Restaurant" ng-model="Location" ng-minlength='6' class="validate"
-              required>
-            <label for="loc">The Restaurant</label>
-          </div>
-          <div class="info">
-            <input id="info" type="text" name="Rest" ng-model="Restaurant" ng-minlength='6' class="validate"
-              required>
-            <label for="loc">RestaurantInformation</label>
-          </div>
-          <p class="alert alert-danger" ng-show="form-register.password.$error.minlength || form.password.$invalid">Your
-            password must be at least 6 characters.</p>
-          <div class="space-top text-center">
-            <button ng-disabled="form-register.$invalid" class="waves-effect waves-light btn done">
-              <i class="material-icons left">done</i> Done
-            </button>
-            <button type="button" class="waves-effect waves-light btn cancel">
-              <i class="material-icons left">clear</i>Cancel
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>Etbo5li</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div ng-controller="Regester">
+				<p class="logo-login"><img src="./etb5ly.png" alt=""></p>
+		<div class="container" id ="margin">
+				<div class="login-container-wrapper clearfix" ng-hide="state" id = "login-page">
+					<div class="welcome"><strong> Welcome To Register </strong></div>
+		               <br> </br>
+					<form class="form-horizontal login-form">
+						<div class="form-group relative">
+								<input type="text" class="form-control input-lg" placeholder="Your Name" ng-model ="username" class="signuptext">
+							<i class="fa fa-user"></i>
+						</div>
+						<div class="form-group relative">
+								<input type="password" class="form-control input-lg" placeholder="Password" ng-model ="password" class="signuptext">
+							<i class="fa fa-lock"></i>
+						</div>
+						<div class="form-group relative">
+								<input type="text" class="form-control input-lg" placeholder="Location" ng-model ="location" class="signuptext">
+							<i class="fa fa-lock"></i>
+						</div>
+						<div class="form-group relative">
+								<input type="number" class="form-control input-lg" placeholder="Phone Number" ng-model ="phoneNumber" class="signuptext">
+							<i class="fa fa-lock"></i>
+						</div>
+						<div class="form-group relative">
+								<input type="text" class="form-control input-lg" placeholder="Restaurant" ng-model ="description" class="signuptext">
+							<i class="fa fa-lock"></i>
+						</div>
+						<div class="form-group relative">
+							<input type="text" class="form-control input-lg" placeholder="Restaurant Information" ng-model ="description" class="signuptext">
+						<i class="fa fa-lock"></i>
+					</div>
+					  <div class="form-group">
+						<button type="submit" class="btn btn-success btn-lg btn-block" ng-click="Regester()">Register</button>
+					  </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>

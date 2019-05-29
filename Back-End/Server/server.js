@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
-const PORT = 3306;
+const PORT = 6000;
 const bodyparser = require('body-parser')
 const mysql = require('mysql');
 var expressValidator = require('express-validator');
@@ -16,17 +16,18 @@ app.use(expressValidator({save:"Theapp",saveUninitialized:false,resave:false}));
 const connection = mysql.createConnection({
     host : 'localhost',
     user:'root',
-    password:"1111",
+    password:"123456",
    database: 'fdp'
 });
 // HRLLO
 const UsersConection = mysql.createConnection({
   host : 'localhost',
   user:'root',
-  password:"1111",
+  password:"123456",
  database: 'users'
 });
 app.use(function(req, res, next) {
+  
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
@@ -72,15 +73,15 @@ app.post('/getMealsByPrice',(req,res) =>{
 
 // The connection made
 connection.connect((err)=>{
-  if(err){
-    console.log("There is a error :",err);
-  }
+  // if(err){
+  //   console.log("There is a error :",err);
+  // }
   console.log("The Conection made Successfully");
 });
 
 
 // THE SERVER
-app.use(express.static('public'))
+app.use(express.static('angular-client'))
 
 //////////////////////////////////////// USER AREA//////////////////////////
 app.get('/registered',(req,res)=>{
@@ -169,7 +170,7 @@ app.post("/login",function(req,res){
   /////////////////////////////////////USER AREA END ////////////////////////////////////////
 
 
-app.get('/',(req,res,next) => res.json({Start:"The First Get"}) );
+// app.get('/',(req,res,next) => res.json({Start:"The First Get"}) );
   
 module.exports = router;
-app.listen(PORT, () => console.log("The Server is working on "+PORT));
+app.listen(PORT, () => console.log("The Server is working on "+ PORT));
