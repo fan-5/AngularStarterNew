@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server.js"
   },
   "author": "Beth Johnson",
   "license": "ISC",
@@ -21,6 +21,8 @@
     "angular-material": "^1.1.18",
     "body-parser": "^1.17.2",
     "express": "^4.15.0",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
     "jquery": "^3.1.1",
     "mongoose": "^4.8.6",
     "mysql": "^2.13.0",
