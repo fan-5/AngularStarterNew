@@ -1,11 +1,12 @@
 angular.module('app')
-.controller('AppCtrl', function(itemsService) {
-  itemsService.getAll((data) => {
-    this.items = data;
-  });
-})
-.component('app', {
-  bindings: {},
-  controller: 'AppCtrl',
-  templateUrl: '/templates/app.html'
-});
+
+  .component('app1', {
+    bindings: {},
+    controller: 'AppCtrl1',
+    templateUrl: '/templates/app.html'
+  })
+.controller('AppCtrl1', function (itemsService) {
+    // itemsService.getAll((data) => {
+      this.items = "data";
+    // });
+  })

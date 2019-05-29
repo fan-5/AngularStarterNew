@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
-const PORT = 6000;
+const PORT = process.env.PORT || 3000;
 const bodyparser = require('body-parser')
 const mysql = require('mysql');
 var expressValidator = require('express-validator');
@@ -14,8 +14,13 @@ app.use(bodyparser.urlencoded({
 app.use(expressValidator({save:"Theapp",saveUninitialized:false,resave:false}));
 // to creare the connection
 
+// THE SERVER
+app.use(express.static(__dirname+"/angular-client"));
+console.log(__dirname)
 
-
+// app.get('/', function(req, res) {
+//   res.send('Hello I am TAFRAN!');
+// });
 
 const connection = mysql.createConnection({
     host : 'localhost',
@@ -178,10 +183,6 @@ connection.connect((err)=>{
   // }
   console.log("The Conection made Successfully");
 });
-
-
-// THE SERVER
-app.use(express.static('AngularStarterNew'));
 
 
 
