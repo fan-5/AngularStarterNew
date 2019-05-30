@@ -19,7 +19,7 @@ angular.module('myApp')
 
 .controller('homepage', function() {
 
-  console.log('5ara')
+  console.log('aaaaaaaaaaaaaaaaaaaaa')
   
 })
 .component('welcomepage', {
