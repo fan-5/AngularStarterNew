@@ -1,12 +1,24 @@
-angular.module('app')
+var app =  angular.module('demoapp' , ['ngRoute']);
 
-  .component('app1', {
-    bindings: {},
-    controller: 'AppCtrl1',
-    templateUrl: '/templates/app.html'
+
+
+// app.controller('myCtrl' , function($scope){
+
+// } )
+
+app.config(function($routeProvider){
+
+  $routeProvider
+
+  .when('/' , {
+    
+    templateUrl : '../index.html'
   })
-.controller('AppCtrl1', function (itemsService) {
-    // itemsService.getAll((data) => {
-      this.items = "data";
-    // });
+  .when('/food' , {
+    controller : 'foodcontroller',
+    templateUrl : "../Food.html"
   })
+})
+
+    
+   

@@ -1,31 +1,26 @@
-angular.module('food', [])
 
-  .controller('SearchController', function ($scope) {
 
+  app.controller('foodcontroller', function ($scope, $http) {
+    $scope.meals,  
+    $scope.restuantName,
+      $scope.resNumber;
+
+      $scope.handleClick =function(){
     $http({
       method: 'post',
-      url: '/Food',
+      url: '/getMealsByPrice',
       data: JSON.stringify({
-        username: $scope.username,
-        password: $scope.password
+       price : $scope.input
       }),
       headers: { 'Content-Type': "application/json; charset = utf-8" }
     }).then(function (response) {
-      $rootScope.data = response.data[0]
-      $location.path("/profile")
+      // console.log(response.data);
+      $scope.meals = response.data
+     
 
     }).catch(function () {
       console.log('big error')
     })
   }
 
-
-    .component('search', {
-      bindings: {
-        service: '=',
-        result: '=',
-      },
-      controller: 'SearchController',
-      templateUrl: 'src/template/Food.html'
-
-    }))
+  })
