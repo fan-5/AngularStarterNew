@@ -15,12 +15,12 @@ Author URI: https://www.zerotheme.com/
 	}
 	img{
 		max-width:100%;
-		width: auto\9;
+		width: auto;
 		height: auto;
 	}
 	
 	.slider-response{
-		display: none;	
+		display: auto;	
 	}
 	/*------------------------*/
 	
